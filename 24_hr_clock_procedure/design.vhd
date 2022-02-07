@@ -59,7 +59,7 @@ begin
                     
                 else
                 
-                	wrapAndIncrement(ticks, clockFreq, true, wrapped);
+               	  wrapAndIncrement(ticks, clockFreq, true, wrapped);
                   wrapAndIncrement(secs, 60, wrapped, wrapped);
                   wrapAndIncrement(mins, 60, wrapped, wrapped);
                   wrapAndIncrement(hrs, 23, wrapped, wrapped);
