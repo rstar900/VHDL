@@ -70,7 +70,7 @@ begin
             
         	when valid_state =>
             
-            	wait until rising_edge(clk);
+            	wait until rising_edge(clk); -- hold this state for a while
                 next_state <= idle;
             
         	when others => next_state <= idle;
@@ -99,13 +99,13 @@ begin
     
     	case current_state is  
     
-        	when idle => valid <= '0'
-        	when s1 => valid <= '0'
-        	when s2 => valid <= '0'
-        	when s3 => valid <= '0'
-        	when s4 => valid <= '0'
-        	when valid_state => valid <= '1'
-        	when others => valid <= '0' 
+        	when idle => valid <= '0';
+        	when s1 => valid <= '0';
+        	when s2 => valid <= '0';
+        	when s3 => valid <= '0';
+        	when s4 => valid <= '0';
+        	when valid_state => valid <= '1';
+        	when others => valid <= '0'; 
         
     	end case;    
     
