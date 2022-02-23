@@ -41,23 +41,31 @@ begin
     process
     
     begin
+    
+    	rst <= '1';
         
-        -- wait atleast till we get a rising edge after 2 cycles
         wait until rising_edge(clk);
+        
+        rst <= '0';
+        
         wait until rising_edge(clk);
         
         psw <= '0';
-        wait for 100 ms;
+        wait for 90 ms;
         psw <= '1';
-        wait for 100 ms;
-        psw <= '1';
-        wait for 100 ms;
+        wait for 90 ms;
         psw <= '0';
-        wait for 100 ms;
+        wait for 90 ms;
         psw <= '1';
-        wait for 100 ms;
+        wait for 80 ms;
+        psw <= '1';
+        wait for 90 ms;
         psw <= '0';
-        wait for 100 ms;
+        wait for 90 ms;
+        psw <= '1';
+        wait for 90 ms;
+        psw <= '0';
+        wait for 90 ms;
         psw <= '1';
         
         wait;
