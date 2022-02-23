@@ -11,14 +11,16 @@ architecture test of testbench is
 	clk : in std_logic;
     rst : in std_logic;
     psw : in std_logic;
-    valid : out std_logic; 
+    valid : out std_logic;
+    sval : out integer
     );
     end component;
     
 	signal clk : std_logic := '0';
-    signal rst : std_logic := '1';
+    signal rst : std_logic := '0';
     signal psw : std_logic := '0';
-    signal valid : std_logic;  
+    signal valid : std_logic; 
+    signal sval : integer;
 	
 begin
 
@@ -27,7 +29,8 @@ begin
     	clk => clk,
         rst => rst,
         psw => psw,
-        valid => valid
+        valid => valid,
+        sval => sval
     );
     
     -- clock generation
@@ -44,17 +47,17 @@ begin
         wait until rising_edge(clk);
         
         psw <= '0';
-        wait for 10 ms;
+        wait for 100 ms;
         psw <= '1';
-        wait for 10 ms;
+        wait for 100 ms;
         psw <= '1';
-        wait for 10 ms;
+        wait for 100 ms;
         psw <= '0';
-        wait for 10 ms;
+        wait for 100 ms;
         psw <= '1';
-        wait for 10 ms;
+        wait for 100 ms;
         psw <= '0';
-        wait for 10 ms;
+        wait for 100 ms;
         psw <= '1';
         
         wait;
